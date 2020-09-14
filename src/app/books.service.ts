@@ -16,7 +16,16 @@ export class BooksService {
     return this.http.get(`${this.djangoHost}/Books/`);
   }
 
+  onlyOneBook(id: number): Observable <any> {
+    return this.http.get(`${this.djangoHost}/Books/${id}/`);
+  }
+
   addBook(newBook: string): Observable <any> {
     return this.http.post(`${this.djangoHost}/Books/`, newBook);
   }
+
+  deleteItem(id: number): Observable <any> {
+    return this.http.delete(`${this.djangoHost}/Books/${id}/`);
+  }
+
 }

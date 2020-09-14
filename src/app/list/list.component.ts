@@ -18,7 +18,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBooks();
-
     this.postBook = new FormGroup({
       title: new FormControl(''),
       description: new FormControl('')

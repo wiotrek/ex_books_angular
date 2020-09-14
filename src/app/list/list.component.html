@@ -14,7 +14,7 @@
 
 <h2>List of books</h2>
 
-<article *ngFor="let book of showBooks;">
+<article *ngFor="let book of showBooks;" routerLink='choice/{{book.id}}'>
   <h3>{{book.title}}</h3>
   <p>{{book.description}}</p>
 </article>
