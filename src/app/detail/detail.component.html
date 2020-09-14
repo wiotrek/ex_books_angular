@@ -3,3 +3,12 @@
 <button (click)="deleteItem()">Delete</button>
 <button (click)="back()">Back</button>
 
+<form [formGroup]='editBook' (ngSubmit)="editPost()">
+    <label for="title">Tytul:
+      <input type="text" formControlName="title"></label><br />
+    
+    <label for="description">Opis:
+    <input type="text" formControlName="description"></label><br />
+    
+    <button type='submit'>Submit</button>
+  </form>

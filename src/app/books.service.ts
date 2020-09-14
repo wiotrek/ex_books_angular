@@ -28,4 +28,7 @@ export class BooksService {
     return this.http.delete(`${this.djangoHost}/Books/${id}/`);
   }
 
+  editBook(editBook: string, id: number): Observable <any> {
+    return this.http.put(`${this.djangoHost}/Books/${id}/`, editBook);
+  }
 }
