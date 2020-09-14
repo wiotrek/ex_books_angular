@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,11 +10,13 @@ export class BooksService {
     protected http: HttpClient
   ) { }
 
+  protected djangoHost = 'http://127.0.0.1:8000';
+
   allBooks(): Observable <any> {
-    return this.http.get('http://127.0.0.1:8000/Books/');
+    return this.http.get(`${this.djangoHost}/Books/`);
   }
 
   addBook(newBook: string): Observable <any> {
-    return this.http.post('http://127.0.0.1:8000/Books/', newBook);
+    return this.http.post(`${this.djangoHost}/Books/`, newBook);
   }
 }

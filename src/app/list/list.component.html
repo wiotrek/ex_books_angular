@@ -1,0 +1,20 @@
+<h1>on the side we see books</h1>
+
+
+<h2>Add your new book</h2>
+<form [formGroup]='postBook' (ngSubmit)="createPost()">
+  <label for="title">Tytul:
+    <input type="text" formControlName="title"></label><br />
+  
+  <label for="description">Opis:
+  <input type="text" formControlName="description"></label><br />
+  
+  <button type='submit'>Submit</button>
+</form>
+
+<h2>List of books</h2>
+
+<article *ngFor="let book of showBooks;">
+  <h3>{{book.title}}</h3>
+  <p>{{book.description}}</p>
+</article>
