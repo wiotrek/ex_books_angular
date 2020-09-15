@@ -1,20 +1,40 @@
-<h1>on the side we see books</h1>
+<div class="container">
 
+<div class="jumbotron">
+  <h1 class="display-4">Your list of books</h1>
+  <hr class="my-4">
+  <p>Do you read a new book?</p>
+  <a class="btn btn-primary btn-lg" role="button"
+  (click)="isShowedForm ? isShowedForm = false : isShowedForm = true">Add</a>
+</div>
 
-<h2>Add your new book</h2>
-<form [formGroup]='postBook' (ngSubmit)="createPost()">
-  <label for="title">Tytul:
-    <input type="text" formControlName="title"></label><br />
+<form class='create_post' *ngIf='isShowedForm' [formGroup]='postBook' (ngSubmit)="createPost()">
+
+  <div class="form-group row">
+    <label for="title_book" class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="title_book" formControlName="title" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description_book" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="description_book" formControlName="description" required>
+    </div>
+  </div>
   
-  <label for="description">Opis:
-  <input type="text" formControlName="description"></label><br />
-  
-  <button type='submit'>Submit</button>
+  <button type="button" class="btn btn-primary">Save</button>
+  <button type="button" class="btn btn-danger"
+  (click)="isShowedForm ? isShowedForm = false : isShowedForm = true">Back</button>
 </form>
 
-<h2>List of books</h2>
+<div class="card w-100" style="width: 18rem;" *ngFor="let book of showBooks;">
+  <div class="card-body">
+    <h5 class="card-title">{{book?.title}}</h5>
+    <p class="card-text">{{book?.description}}</p>
+    <a href="#" class="card-link" routerLink='choice/{{book.id}}'>Edit</a>
+  </div>
+</div>
 
-<article *ngFor="let book of showBooks;" routerLink='choice/{{book.id}}'>
-  <h3>{{book.title}}</h3>
-  <p>{{book.description}}</p>
-</article>
+</div>

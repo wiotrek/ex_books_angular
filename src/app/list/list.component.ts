@@ -15,6 +15,7 @@ export class ListComponent implements OnInit {
 
   public showBooks: [];
   public postBook: any;
+  public isShowedForm = false;
 
   ngOnInit(): void {
     this.getBooks();
@@ -46,5 +47,5 @@ export class ListComponent implements OnInit {
       }
     );
   }
-
 }
+

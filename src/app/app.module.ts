@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { BooksService } from './books.service';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DetailComponent } from './detail/detail.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [BooksService],
   bootstrap: [AppComponent]
