@@ -1,0 +1,12 @@
+.container.detail-component {
+    margin-top: 5%;
+}
+.edit_post {
+    margin: 5%;
+}
+a {
+    cursor: pointer;
+}
+.btn.btn-primary, .btn.btn-success {
+    margin-right: 2%;
+}

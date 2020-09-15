@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { BooksService } from '../books.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-detail',
@@ -19,6 +19,9 @@ export class DetailComponent implements OnInit {
 
     public showBook: any;
     public editBook: any;
+    public isShowedForm = false;
+    public areYouDeletePost = false;
+    public isVisibleCard = true;
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -33,8 +36,6 @@ export class DetailComponent implements OnInit {
         console.log(error);
       }
     );
-
-
 
     this.editBook = new FormGroup({
       title: new FormControl(''),
@@ -72,4 +73,5 @@ export class DetailComponent implements OnInit {
   back(): void {
     this.location.back();
   }
+
 }

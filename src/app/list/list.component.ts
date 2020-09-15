@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../books.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-list',
@@ -20,8 +20,8 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.getBooks();
     this.postBook = new FormGroup({
-      title: new FormControl(''),
-      description: new FormControl('')
+      title: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required])
     });
   }
 
@@ -30,6 +30,7 @@ export class ListComponent implements OnInit {
       response => {
         console.log(response);
         this.getBooks();
+        this.isShowedForm = false;
       },
       error => {
         console.log(error);
