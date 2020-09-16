@@ -20,8 +20,8 @@ export class ListComponent implements OnInit {
   ngOnInit(): void {
     this.getBooks();
     this.postBook = new FormGroup({
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required])
+      title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
+      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(256)])
     });
   }
 

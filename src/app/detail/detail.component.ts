@@ -25,15 +25,14 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log('id', id);
-
     this.bs.onlyOneBook(id).subscribe(
       response => {
         this.showBook = response;
 
         this.editBook = new FormGroup({
-          title: new FormControl(`${this.showBook.title}`),
-          description: new FormControl(`${this.showBook.description}`)
+          title: new FormControl(`${this.showBook.title}`, [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
+          description: new FormControl(`${this.showBook.description}`,
+          [Validators.required, Validators.minLength(3), Validators.maxLength(256)])
         });
 
 
