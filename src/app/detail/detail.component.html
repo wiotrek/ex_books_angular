@@ -13,28 +13,29 @@
       </div>
     </div>
 
-    <div class="card w-100" style="width: 18rem; margin-top: 1%;" *ngIf="isShowedForm">
+    <div class="card w-100" style="width: 18rem; margin-top: 1%;" *ngIf="isShowedForm">  
       <div class="card-body">
-        <form class='edit_post'  [formGroup]='editBook' (ngSubmit)="editPost()">
 
+        <form class='edit_post'  [formGroup]='editBook' (ngSubmit)="editPost()">
           <div class="form-group row">
             <label for="title_book" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="title_book" formControlName="title">
+              <input type="text" class="form-control"  
+                 value="dsadsa" formControlName="title" required>  
             </div>
           </div>
         
           <div class="form-group row">
             <label for="description_book" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="description_book" formControlName="description">
+              <input type="text" class="form-control" id="description_book" formControlName="description" value="chuj">
             </div>
           </div>
 
           <button type="submit" class="btn btn-primary">Save changes</button>
           <button class="btn btn-danger" (click)="isShowedForm = false; isVisibleCard = true">Back</button>
-          
         </form>
+        
       </div>
     </div>
 

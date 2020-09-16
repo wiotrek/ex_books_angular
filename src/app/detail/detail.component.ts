@@ -29,19 +29,19 @@ export class DetailComponent implements OnInit {
 
     this.bs.onlyOneBook(id).subscribe(
       response => {
-        console.table('log ' + response);
         this.showBook = response;
+
+        this.editBook = new FormGroup({
+          title: new FormControl(`${this.showBook.title}`),
+          description: new FormControl(`${this.showBook.description}`)
+        });
+
+
       },
       error => {
         console.log(error);
       }
     );
-
-    this.editBook = new FormGroup({
-      title: new FormControl(''),
-      description: new FormControl('')
-    });
-
   }
 
   deleteItem(): void {
