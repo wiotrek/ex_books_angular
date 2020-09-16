@@ -31,12 +31,15 @@
   
 </form>
 
-<div class="card w-100" style="width: 18rem;" *ngFor="let book of showBooks;">
+<div class="card w-100" style="width: 18rem;" 
+*ngFor="let book of showBooks | paginate: { itemsPerPage: 5, currentPage: p }">
   <div class="card-body">
     <h5 class="card-title">{{book?.title}}</h5>
     <p class="card-text">{{book?.description}}</p>
     <a class="card-link" routerLink='choice/{{book.id}}'>Edit</a>
   </div>
 </div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 
 </div>

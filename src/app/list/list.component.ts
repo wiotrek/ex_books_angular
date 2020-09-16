@@ -8,7 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
   constructor(
     private bs: BooksService,
   ) { }
@@ -16,6 +15,8 @@ export class ListComponent implements OnInit {
   public showBooks: [];
   public postBook: any;
   public isShowedForm = false;
+  public pageNext: string;
+  public p = 1;
 
   ngOnInit(): void {
     this.getBooks();
@@ -28,9 +29,8 @@ export class ListComponent implements OnInit {
   createPost = () => {
     this.bs.addBook(this.postBook.value).subscribe(
       response => {
-        console.log(response);
-        this.getBooks();
         this.isShowedForm = false;
+        this.getBooks();
       },
       error => {
         console.log(error);
@@ -42,6 +42,7 @@ export class ListComponent implements OnInit {
     this.bs.allBooks().subscribe(
       response => {
         this.showBooks = response;
+
       },
       error => {
         console.log(error);

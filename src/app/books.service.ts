@@ -16,6 +16,11 @@ export class BooksService {
     return this.http.get(`${this.djangoHost}/Books/`);
   }
 
+  booksFromNextSide(nextPage: string): Observable <any> {
+    return this.http.get(`${nextPage}`);
+  }
+
+
   onlyOneBook(id: number): Observable <any> {
     return this.http.get(`${this.djangoHost}/Books/${id}/`);
   }

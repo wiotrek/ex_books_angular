@@ -34,8 +34,6 @@ export class DetailComponent implements OnInit {
           description: new FormControl(`${this.showBook.description}`,
           [Validators.required, Validators.minLength(3), Validators.maxLength(256)])
         });
-
-
       },
       error => {
         console.log(error);
