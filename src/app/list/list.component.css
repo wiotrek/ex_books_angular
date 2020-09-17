@@ -1,19 +1,32 @@
-.jumbotron {
-    margin: 2% 0;
-    padding: 3%;
+@media (min-width: 0) { 
+    .jumbotron {
+        margin: 2% 0;
+        padding: 3%;
+    }
+    .create_post {
+        padding: 5%;
+    }
+    .card {
+        margin: 2% 0;
+    }
+    .btn.btn-primary{
+        margin-right: 2%;
+    }
+    .btn.btn-primary.btn-lg.false {
+        background-color: red;
+        border: 0;
+    }
+    .btn.btn-primary.btn-lg.false:hover {
+        background-color: rgb(173, 24, 24);
+    }
+    .card-link:hover {
+        text-decoration: underline;
+    }    
 }
-.create_post {
-    padding: 5%;
-}
-.card {
-    margin: 2% 0;
-}
-.btn.btn-primary{
-    margin-right: 2%;
-}
-.btn.btn-primary.btn-lg.false {
-    background-color: red;
-}
-.card-link:hover {
-    text-decoration: underline;
-}
+
+@media (min-width: 768px) { 
+    .my-pagination {
+        display: flex;
+        justify-content: space-evenly;
+    }
+ }

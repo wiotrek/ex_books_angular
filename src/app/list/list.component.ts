@@ -42,7 +42,6 @@ export class ListComponent implements OnInit {
     this.bs.allBooks().subscribe(
       response => {
         this.showBooks = response;
-
       },
       error => {
         console.log(error);

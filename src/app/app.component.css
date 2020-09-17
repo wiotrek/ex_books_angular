@@ -1,0 +1,6 @@
+.nav-link.myEdit.active {
+    color: #007BFF;
+}
+.nav-link.myEdit:hover {
+    text-decoration: underline;
+}

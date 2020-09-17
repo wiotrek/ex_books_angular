@@ -10,12 +10,14 @@ import { BooksService } from './books.service';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
