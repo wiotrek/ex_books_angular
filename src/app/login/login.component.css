@@ -1,0 +1,9 @@
+@media (min-width: 0px) { 
+    .card.w-100, .container {
+        margin-top: 3%;
+    }
+    .btn.btn-primary {
+        margin-top: 2%;
+    }
+}
+
