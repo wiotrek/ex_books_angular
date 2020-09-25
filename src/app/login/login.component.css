@@ -5,5 +5,8 @@
     .btn.btn-primary {
         margin-top: 2%;
     }
+    .passIsWrong {
+        color: red;
+    }
 }
 
