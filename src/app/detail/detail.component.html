@@ -3,7 +3,10 @@
     <div class="card w-100" style="width: 18rem;" *ngIf='isVisibleCard'>
       <div class="card-body">
         <h5 class="card-title">{{showBook?.title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{showBook?.year}}</h6>
+        <p class="card-text">Author: {{showBook?.author}}</p>
+        <p class="card-text">Rating: {{showBook?.rating}}</p>
+        <p class="card-text">Genre {{showBook?.genre[1]}}</p>
         <p class="card-text">{{showBook?.description}}</p>
         <a class="card-link" 
         (click)="isShowedForm = true; isVisibleCard = false">Edit</a>
