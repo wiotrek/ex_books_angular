@@ -17,9 +17,9 @@ export class ListComponent implements OnInit {
   public isShowedForm = false;
   public pageNext: string;
   public p = 1;
+  public isLogIn = this.bs.isLogIn;
 
   ngOnInit(): void {
-    console.log(this.bs.isLogIn);
     this.getBooks();
     this.postBook = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
@@ -43,9 +43,6 @@ export class ListComponent implements OnInit {
     this.bs.allBooks().subscribe(
       response => {
         this.showBooks = response;
-      },
-      error => {
-        console.log(error);
       }
     );
   }

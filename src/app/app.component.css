@@ -1,3 +1,7 @@
+.nav-link.myEdit {
+    cursor: pointer;
+    font-size: medium;
+}
 .nav-link.myEdit.active {
     color: #007BFF;
 }

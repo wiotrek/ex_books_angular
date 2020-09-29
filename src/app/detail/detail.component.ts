@@ -28,7 +28,6 @@ export class DetailComponent implements OnInit {
     this.bs.onlyOneBook(id).subscribe(
       response => {
         this.showBook = response;
-
         this.editBook = new FormGroup({
           title: new FormControl(`${this.showBook.title}`, [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
           description: new FormControl(`${this.showBook.description}`,
@@ -69,6 +68,10 @@ export class DetailComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  numSequence(n: number): Array<number> {
+    return Array(n);
   }
 
 }
