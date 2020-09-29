@@ -13,11 +13,11 @@
         margin-right: 2%;
     }
     .btn.btn-primary.btn-lg.false {
-        background-color: red;
+        background-color: #C71F37;
         border: 0;
     }
     .btn.btn-primary.btn-lg.false:hover {
-        background-color: rgb(173, 24, 24);
+        background-color: #b21E35;
     }
     .card-link:hover {
         text-decoration: underline;

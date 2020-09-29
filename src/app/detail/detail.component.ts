@@ -70,4 +70,8 @@ export class DetailComponent implements OnInit {
     this.location.back();
   }
 
+  numSequence(n: number): Array<number> {
+    return Array(n);
+  }
+
 }
