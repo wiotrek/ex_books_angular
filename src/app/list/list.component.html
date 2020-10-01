@@ -36,6 +36,45 @@
         <input type="text" class="form-control" id="description_book" formControlName="description">
       </div>
     </div>
+
+    <div class="form-group row">
+      <label for="genre_book" class="col-sm-2 col-form-label"></label>
+      <div class="col-sm-10">
+        <select class="custom-select" formControlName="genre">
+          <option selected id="genre_book" 
+          *ngFor="let item of genreBooks | keyvalue" value="{{item.key}}"
+          >{{item.value}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- <div class="form-group row">
+      <label for="year_book" class="col-sm-2 col-form-label">Year</label>
+      <div class="col-sm-2">
+        <input type="number" value='2000' class="form-control" id="year_book" formControlName="year">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="rating_book" class="col-sm-2 col-form-label">Rating</label>
+      <div class="col-sm-2">
+        <input type="number" min='1' max='5' value="5" class="form-control" id="rating_book" formControlName="rating">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="sites_book" class="col-sm-2 col-form-label">Pages</label>
+      <div class="col-sm-2">
+        <input type="number" min='1' value="100" class="form-control" id="sites_book" formControlName="sites">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="author_book" class="col-sm-2 col-form-label">Author</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="author_book" formControlName="author">
+      </div>
+    </div> -->
     
     <button type="submit" class="btn btn-primary" [disabled]="!postBook.valid">Save</button>
     
