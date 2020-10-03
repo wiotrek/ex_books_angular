@@ -26,8 +26,12 @@ export class ListComponent implements OnInit {
     console.log(this.genreBooks);
     this.postBook = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
-      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(256)]),
-      genre: new FormControl('', [Validators.required])
+      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
+      year: new FormControl(2000, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
+      rating: new FormControl([Validators.required]),
+      genre: new FormControl([Validators.required]),
+      amount_sites: new FormControl(100, [Validators.required]),
+      author: new FormControl('', [Validators.minLength(3), Validators.maxLength(255)])
     });
   }
 
@@ -35,10 +39,7 @@ export class ListComponent implements OnInit {
     this.bs.allBooks().subscribe(
       response => {
         this.showBooks = response;
-
         this.genreBooks = new Map(response[0].GENRE);
-        // this.genreBooks = response[0].GENRE;
-        console.log(this.genreBooks);
       }
     );
   }
@@ -55,5 +56,8 @@ export class ListComponent implements OnInit {
     );
   }
 
+  numSequence(n: number): Array<number> {
+    return Array(n);
+  }
 }
 
