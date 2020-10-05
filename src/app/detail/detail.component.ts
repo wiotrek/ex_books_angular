@@ -18,6 +18,7 @@ export class DetailComponent implements OnInit {
   ) { }
 
     public showBook: any;
+    genreBooks;
     public editBook: any;
     public isShowedForm = false;
     public areYouDeletePost = false;
@@ -25,13 +26,20 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.bs.onlyOneBook(id).subscribe(
       response => {
         this.showBook = response;
+        this.genreBooks = new Map(response.GENRE);
         this.editBook = new FormGroup({
           title: new FormControl(`${this.showBook.title}`, [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
           description: new FormControl(`${this.showBook.description}`,
-          [Validators.required, Validators.minLength(3), Validators.maxLength(256)])
+          [Validators.required, Validators.minLength(3), Validators.maxLength(256)]),
+          year: new FormControl(`${this.showBook.year}`, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
+          rating: new FormControl(`${this.showBook.rating}`, [Validators.required]),
+          genre: new FormControl(`${this.showBook.genre[0]}` , [Validators.required]),
+          amount_sites: new FormControl(`${this.showBook.amount_sites}`, [Validators.required]),
+          author: new FormControl(`${this.showBook.author}`, [Validators.minLength(3), Validators.maxLength(255)])
         });
       },
       error => {
