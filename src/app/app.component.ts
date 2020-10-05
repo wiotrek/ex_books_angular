@@ -6,12 +6,14 @@ import { BooksService } from './books.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(
-    private bs: BooksService
-  ){}
+  isCollapsed: boolean;
   title = 'books';
   isLogin: boolean = this.bs.isLogIn;
-
+  constructor(
+    private bs: BooksService
+  ){
+    this.isCollapsed = true;
+  }
   logout = () => {
     localStorage.removeItem('userToken');
     localStorage.clear();

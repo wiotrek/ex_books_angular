@@ -22,6 +22,7 @@
       <div class="card-body">
 
         <form class='edit_post'  [formGroup]='editBook' (ngSubmit)="editPost()">
+          
           <div class="form-group row">
             <label for="title_book" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
@@ -36,6 +37,49 @@
               <input type="text" class="form-control" id="description_book" formControlName="description" value="chuj">
             </div>
           </div>
+
+          <div class="form-group row">
+            <label for="rating_book" class="col-sm-2 col-form-label">Rating</label>
+            <div class="col-sm-5">
+              <select class="custom-select" class="form-control" id="rating_book" formControlName="rating">
+                <option  id="rating_book" 
+                *ngFor="let n of numSequence(5); let i = index" value="{{i+1}}"
+                >{{i+1}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="year_book" class="col-sm-2 col-form-label">Year</label>
+            <div class="col-sm-5">
+              <input type="number" class="form-control" id="year_book" formControlName="year">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="genre_book" class="col-sm-2 col-form-label">Genre</label>
+            <div class="col-sm-8">
+              <select class="custom-select" formControlName="genre">
+                <option  id="genre_book" 
+                *ngFor="let item of genreBooks | keyvalue" value="{{item.key}}"
+                >{{item.value}}</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="form-group row">
+            <label for="sites_book" class="col-sm-2 col-form-label">Pages</label>
+            <div class="col-sm-5">
+              <input type="number" min='1' class="form-control" id="sites_book" formControlName="amount_sites">
+            </div>
+          </div>
+      
+          <div class="form-group row">
+            <label for="author_book" class="col-sm-2 col-form-label">Author</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="author_book" formControlName="author">
+            </div>
+          </div> 
 
           <button type="submit" class="btn btn-primary">Save changes</button>
           <button class="btn btn-danger" (click)="isShowedForm = false; isVisibleCard = true">Back</button>
