@@ -12,6 +12,7 @@ export class BooksService {
 
   // protected djangoHost = 'http://127.0.0.1:8000';
   protected djangoHost = 'https://api-books-backend.herokuapp.com';
+
   public localhost = 'http://localhost:4200/';
   public token = localStorage.getItem('userToken');
   protected httpHeaders = new HttpHeaders(
