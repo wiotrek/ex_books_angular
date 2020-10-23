@@ -18,21 +18,21 @@ export class ListComponent implements OnInit {
   public pageNext: string;
   public p = 1;
   public isLogIn = this.bs.isLogIn;
-  // genreBooks: Map <number, string>;
   genreBooks;
 
   ngOnInit(): void {
-    this.getBooks();
-    console.log(this.genreBooks);
-    this.postBook = new FormGroup({
-      title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
-      description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
-      year: new FormControl(2000, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
-      rating: new FormControl([Validators.required]),
-      genre: new FormControl([Validators.required]),
-      amount_sites: new FormControl(100, [Validators.required]),
-      author: new FormControl('', [Validators.minLength(3), Validators.maxLength(255)])
-    });
+    if (this.isLogIn) {
+      this.getBooks();
+      this.postBook = new FormGroup({
+        title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(32)]),
+        description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
+        year: new FormControl(2000, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
+        rating: new FormControl([Validators.required]),
+        genre: new FormControl([Validators.required]),
+        amount_sites: new FormControl(100, [Validators.required]),
+        author: new FormControl('', [Validators.minLength(3), Validators.maxLength(255)])
+      });
+    }
   }
 
   getBooks = () => {
@@ -40,7 +40,8 @@ export class ListComponent implements OnInit {
       response => {
         this.showBooks = response;
         this.genreBooks = new Map(response[0].GENRE);
-      }
+      },
+      error => {}
     );
   }
 
@@ -50,9 +51,7 @@ export class ListComponent implements OnInit {
         this.isShowedForm = false;
         this.getBooks();
       },
-      error => {
-        console.log(error);
-      }
+      error => {}
     );
   }
 

@@ -2,6 +2,9 @@
     cursor: pointer;
     font-size: medium;
 }
+.navbar-brand {
+    cursor: pointer;
+}
 .nav-link.myEdit.active {
     color: #007BFF;
 }

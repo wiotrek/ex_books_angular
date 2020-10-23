@@ -19,5 +19,7 @@ export class AppComponent {
     localStorage.clear();
     window.location.href = this.bs.localhost;
   }
-
+  reload = () => {
+    window.location.href = this.bs.localhost;
+  }
 }

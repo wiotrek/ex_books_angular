@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       response => {
         console.log(response.token);
         localStorage.setItem('userToken', response.token);
-        // this.bs.isLogIn = this.bs.isExistToken();
         window.location.href = this.bs.localhost;
       },
       error => {
