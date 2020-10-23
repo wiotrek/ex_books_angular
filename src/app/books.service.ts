@@ -10,8 +10,8 @@ export class BooksService {
     protected http: HttpClient
   ) { }
 
-  protected djangoHost = 'http://127.0.0.1:8000';
-  // protected djangoHost = 'https://api-books-backend.herokuapp.com';
+  // protected djangoHost = 'http://127.0.0.1:8000';
+  protected djangoHost = 'https://api-books-backend.herokuapp.com';
 
   // public localhost = 'http://localhost:4200/';
   public localhost = 'https://wiotrek.github.io/ex_books_angular/';
