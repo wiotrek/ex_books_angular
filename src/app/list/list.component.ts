@@ -28,7 +28,7 @@ export class ListComponent implements OnInit {
         description: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]),
         year: new FormControl(2000, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]),
         rating: new FormControl([Validators.required]),
-        genre: new FormControl([Validators.required]),
+        genre: new FormControl(0),
         amount_sites: new FormControl(100, [Validators.required]),
         author: new FormControl('', [Validators.minLength(3), Validators.maxLength(255)])
       });
@@ -39,7 +39,9 @@ export class ListComponent implements OnInit {
     this.bs.allBooks().subscribe(
       response => {
         this.showBooks = response;
-        this.genreBooks = new Map(response[0].GENRE);
+        if (response.length !== 0) {
+          this.genreBooks = new Map(response[0].GENRE);
+        }
       },
       error => {}
     );
