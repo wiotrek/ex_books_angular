@@ -42,7 +42,7 @@ export class BooksService {
 
   // login component
   loginService(userData: string): Observable <any> {
-    return this.http.post('http://127.0.0.1:8000/auth/', userData);
+    return this.http.post(`${this.djangoHost}/auth/`, userData);
   }
 
   isExistToken(): boolean {
