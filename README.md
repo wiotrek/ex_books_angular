@@ -19,7 +19,7 @@ https://github.com/wiotrek/books_backend
 
 # Technologies
 <ul>
-  <li>Angular 9</li>
+  <li>Angular 10</li>
   <li>Typescript</li>
   <li>Bootstrap</li>
   <li>Fontawesome</li>
