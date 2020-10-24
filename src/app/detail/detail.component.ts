@@ -42,9 +42,7 @@ export class DetailComponent implements OnInit {
           author: new FormControl(`${this.showBook.author}`, [Validators.minLength(3), Validators.maxLength(255)])
         });
       },
-      error => {
-        console.log(error);
-      }
+      error => {}
     );
   }
 
@@ -52,12 +50,9 @@ export class DetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.bs.deleteItem(id).subscribe(
       response => {
-        console.log('delete');
         this.location.back();
       },
-      error => {
-        console.log('nie delete');
-      }
+      error => {}
     );
   }
 
@@ -65,12 +60,9 @@ export class DetailComponent implements OnInit {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.bs.editBook(this.editBook.value, id).subscribe(
       response => {
-        console.log(response);
         this.location.back();
       },
-      error => {
-        console.log(error);
-      }
+      error => {}
     );
   }
 
