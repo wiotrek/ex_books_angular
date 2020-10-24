@@ -10,8 +10,8 @@
  </table>
  
 # Demo
-Note: You have been patiet, because may some time until server starts.
-example login = guest, and password = speedcube
+Note: You have been patiet, because may some time until server starts. <br />
+Example login = guest, and password = speedcube <br />
 https://wiotrek.github.io/ex_books_angular/
 
 link to repository backends.
