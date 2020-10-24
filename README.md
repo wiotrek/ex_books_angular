@@ -1,27 +1,40 @@
-# Books
+# #your_books is app where we can safe our read books.
+<table>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/57100427/97080748-01bd6d00-15fe-11eb-9215-f58d875ca469.png"></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/57100427/97080749-02560380-15fe-11eb-91c8-e28ec2bd5384.png"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/57100427/97080750-02560380-15fe-11eb-92b3-106bc81b8234.png"></td>
+  </tr>
+ </table>
+ 
+# Demo
+Note: You have been patiet, because may some time until server starts. <br />
+Example login = guest, and password = speedcube <br />
+https://wiotrek.github.io/ex_books_angular/
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+link to repository backends.
+https://github.com/wiotrek/books_backend
 
-## Development server
+# Technologies
+<ul>
+  <li>Angular 10</li>
+  <li>Typescript</li>
+  <li>Bootstrap</li>
+  <li>Fontawesome</li>
+  <li>Github pages</li>
+  <li>Python</li>
+  <li>Django</li>
+  <li>Rest framework</li>
+  <li>CORS</li>
+  <li>Heroku</li>
+</ul>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Features
+<ul>
+  <li>Logging and Logut</li>
+  <li>CRUD self posts. And read only self posts.</li>
+  <li>Pagination results in frontend</li>
+  <li>RWD</li>
+</ul>
