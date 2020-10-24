@@ -8,6 +8,7 @@
     <td valign="top"><img src="https://user-images.githubusercontent.com/57100427/97080750-02560380-15fe-11eb-92b3-106bc81b8234.png"></td>
   </tr>
  </table>
+ 
 # Demo
 Note: You have been patiet, because may some time until server starts.
 example login = guest, and password = speedcube
@@ -29,6 +30,7 @@ https://github.com/wiotrek/books_backend
   <li>CORS</li>
   <li>Heroku</li>
 </ul>
+
 # Features
 <ul>
   <li>Logging and Logut</li>
