@@ -18,7 +18,7 @@ https://wiotrek.github.io/ex_books_angular/
 link to repository backends -> 
 https://github.com/wiotrek/books_backend
 
-link to heroku server.
+link to heroku server ->
 https://api-books-backend.herokuapp.com/
 
 # Technologies
